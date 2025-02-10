@@ -115,6 +115,8 @@ jobs:
         run: python -c "import proxsuite"
         env:
           PYTHONWARNINGS: error
+      - name: test OpenMP
+        run: python -c "import proxsuite; help(proxsuite.proxqp.dense.solve_in_parallel)"
 
   release:
     needs: "test"
